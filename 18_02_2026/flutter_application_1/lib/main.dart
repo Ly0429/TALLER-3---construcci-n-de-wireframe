@@ -16,10 +16,23 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         // backgroundColor: const Color.fromARGB(255, 218, 216, 216),
         appBar: AppBar(
-          toolbarHeight: 20,
-          elevation: 0,
           backgroundColor: const Color.fromARGB(255, 15, 64, 77),
-        ),
+          toolbarHeight:60,
+          elevation: 0,
+          centerTitle: true,
+          title: const Text(
+            "Explore Categories",
+            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
+          ),
+            actions: const [
+              SizedBox(width: 10),
+              Icon(Icons.notifications_none, size: 28, color: Color.fromARGB(255, 0, 0, 0),),
+              SizedBox(width: 15),
+              Icon(Icons.person_outline, size: 28, color: Color.fromARGB(255, 0, 0, 0),),
+              SizedBox(width: 10),
+            ],
+          ),
+
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16),
@@ -49,22 +62,10 @@ class MainApp extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(width: 15),
-                    const Icon(Icons.notifications_none, size: 28),
-                    const SizedBox(width: 15),
-                    const Icon(Icons.person_outline, size: 28),
                   ],
                 ),
 
                 const SizedBox(height: 25),
-
-                // Título
-                const Center(
-                  child: Text(
-                    "Explore Categories",
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                  ),
-                ),
 
                 const SizedBox(height: 25),
 
@@ -124,7 +125,7 @@ class MainApp extends StatelessWidget {
           currentIndex: 1,
           type: BottomNavigationBarType.fixed,
           backgroundColor: Color.fromARGB(255, 15, 64, 77),
-          selectedItemColor: const Color.fromARGB(255, 187, 117, 214), 
+          selectedItemColor: const Color.fromARGB(255, 187, 117, 214),
           unselectedItemColor: Colors.black87,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),

@@ -20,25 +20,23 @@ class MainApp extends StatelessWidget {
           toolbarHeight:60,
           elevation: 0,
           centerTitle: true,
+          leading: const SizedBox(width: 48),
           title: const Text(
             "Explore Categories",
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
           ),
             actions: const [
               SizedBox(width: 10),
-              Icon(Icons.notifications_none, size: 28, color: Color.fromARGB(255, 0, 0, 0),),
+              Icon(Icons.notifications_none, size: 28, color: Color.fromARGB(255, 194, 191, 191),),
               SizedBox(width: 15),
-              Icon(Icons.person_outline, size: 28, color: Color.fromARGB(255, 0, 0, 0),),
+              Icon(Icons.person_outline, size: 28, color: Color.fromARGB(255, 196, 193, 193),),
               SizedBox(width: 10),
             ],
           ),
 
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+        body: ListView(
+  padding: const EdgeInsets.all(16),
+  children: [
                 // Buscador
                 Row(
                   children: [
@@ -50,12 +48,12 @@ class MainApp extends StatelessWidget {
                           color: Colors.grey[300],
                           borderRadius: BorderRadius.circular(25),
                         ),
-                        child: const Row(
+                        child: Row(
                           children: [
                             Icon(Icons.search, color: Colors.black54),
                             SizedBox(width: 10),
                             Text(
-                              "Search...",
+                              "Search Gamers... ",
                               style: TextStyle(color: Colors.black54),
                             ),
                           ],
@@ -73,7 +71,7 @@ class MainApp extends StatelessWidget {
                 const Customcard(
                   title: 'Ly Shadow',
                   subtitle:
-                      'Jugadora profesional especializada en juegos de estrategia y acción.',
+                      'Professional player specializing in strategy and action games.',
                   icon: Icons.person,
                 ),
 
@@ -92,7 +90,7 @@ class MainApp extends StatelessWidget {
                       Icon(Icons.search, color: Colors.black54),
                       SizedBox(width: 10),
                       Text(
-                        "Search categories...",
+                        "Search Categories...",
                         style: TextStyle(color: Colors.black54),
                       ),
                     ],
@@ -103,30 +101,28 @@ class MainApp extends StatelessWidget {
 
                 // Categorías
                 const CategoryCard(
-                  title: "Juegos de Acción",
-                  description: "Juegos rápidos llenos de adrenalina.",
+                  title: "Action Games",
+                  description: "Fast-paced, adrenaline-filled games.",
                 ),
 
                 const CategoryCard(
-                  title: "Juegos de Aventura",
-                  description: "Explora mundos abiertos y misiones épicas.",
+                  title: "Adventure Games",
+                  description: "Explore open worlds and epic quests.",
                 ),
 
                 const CategoryCard(
-                  title: "Juegos de Estrategia",
-                  description: "Planifica y domina cada movimiento.",
+                  title: "Strategy Games",
+                  description: "Plan and master every move.",
                 ),
               ],
             ),
-          ),
-        ),
 
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: 1,
           type: BottomNavigationBarType.fixed,
           backgroundColor: Color.fromARGB(255, 15, 64, 77),
           selectedItemColor: const Color.fromARGB(255, 187, 117, 214),
-          unselectedItemColor: Colors.black87,
+          unselectedItemColor: const Color.fromARGB(221, 211, 211, 211),
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(
